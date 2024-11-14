@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant Browser
+    participant Server
+
+    Browser->>Server: GET /exampleapp/spa
+    Server-->>Browser: HTTP Response 200 OK (HTML page)
+
+    Browser->>Server: GET /exampleapp/main.css 
+    Server-->>Browser: HTTP Response 304 Not Modified (no changes to the CSS)
+
+    Browser->>Server: GET /exampleapp/spa.js
+    Server-->>Browser: HTTP Response 200 OK (JavaScript file)
+
+    Browser->>Server: GET /exampleapp/data.json 
+    Server-->>Browser: HTTP Response 200 OK (JSON data)

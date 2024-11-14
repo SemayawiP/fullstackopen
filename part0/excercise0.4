@@ -1,0 +1,25 @@
+
+sequenceDiagram
+    participant Browser
+    participant Server
+   
+    Browser->>Server: POST /exampleapp/new_note     
+    Server-->>Browser: HTTP Response (302 Found, redirect to /exampleapp/notes)
+    Browser->>Server: GET /exampleapp/notes (following redirect)
+    Server-->>Browser: HTTP Response (HTML page with notes)
+
+
+    Browser->>Server: GET /exampleapp/notes    
+    Server-->>Browser: HTTP Response 200 OK (HTML page with notes)
+    
+
+    Browser->>Server: GET /exampleapp/main.css 
+    Server-->>Browser: HTTP Response 304 Not Modified (no changes to the CSS)
+
+
+    Browser->>Server: GET /exampleapp/main.js 
+    Server-->>Browser: HTTP Response 304 Not Modified (no changes to the JS)
+
+
+    Browser->>Server: GET /exampleapp/data.json 
+    Server-->>Browser: HTTP Response 200 OK (JSON data)
