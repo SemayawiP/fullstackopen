@@ -3,10 +3,10 @@ sequenceDiagram
     participant Server
 
     Browser->>Server: GET /exampleapp/spa
-    Server-->>Browser: HTTP Response 200 OK (HTML page)
+    Server-->>Browser: HTTP Response 200 OK (HTML Document)
 
     Browser->>Server: GET /exampleapp/main.css 
-    Server-->>Browser: HTTP Response 304 Not Modified (no changes to the CSS)
+    Server-->>Browser: HTTP Response 304 Not Modified (the CSS file)
 
     Browser->>Server: GET /exampleapp/spa.js
     Server-->>Browser: HTTP Response 200 OK (JavaScript file)
